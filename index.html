@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories Assignment</title>
+</head>
+<body>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          margin: 0;
+          font-family: Arial;
+        }
+        
+        /* The grid: Four equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 25%;
+          padding: 10px;
+        }
+        
+        /* Style the images inside the grid */
+        .column img {
+          opacity: 0.8; 
+          cursor: pointer; 
+        }
+        
+        .column img:hover {
+          opacity: 1;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* The expanding image container */
+        .container {
+          position: relative;
+          display: none;
+        }
+        
+        /* Expanding image text */
+        #imgtext {
+          position: absolute;
+          bottom: 15px;
+          left: 15px;
+          color: white;
+          font-size: 20px;
+        }
+        
+        /* Closable button inside the expanded image */
+        .closebtn {
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          color: white;
+          font-size: 35px;
+          cursor: pointer;
+        }
+        </style>
+        </head>
+        <body>
+        
+        <div style="text-align:center">
+          <h2>Tabbed Image Gallery</h2>
+          <p>I will explain the history of my country Sierra Leone using the image galary</p>
+          <p>Click on the images below:</p>
+        </div>
+        
+        <!-- The four columns -->
+        <div class="row">
+          <div class="column">
+            <img src="lion m 1.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+            <p>Sierra Leone was "discovered" by the Europeans when a Portuguese expedition headed by Bartolomeu Dias in the late 1480s ventured down along the African coast. 
+                Portuguese voyagers gave the name Serra Lyoa (Lion Mountains), later changed to Sierra Leone by the British.</p>
+          </div>
+          <div class="column">
+            <img src="child soldia 2.jpg" alt="Snow" style="width:100%" onclick="myFunction(this);">
+            <p>The Sierra Leone Civil War (1991–2002) was a civil war in Sierra Leone that began on 23 March 1991
+                 when the Revolutionary United Front (RUF), 
+                 with support from the special forces of Charles Taylor’s National Patriotic Front of Liberia (NPFL). 
+                 this affect the country up to this day. children as low as 8 years were recruited as rebels.</p>
+          </div>
+          <div class="column">
+            <img src="Loma-Mountain-Ranges-Sierra-Leone.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+            <p>Sierra Leone has a completely different topography. With fewer higher mountains, this region is overwhelmed with tropical rain forests the likes of the Amazon.
+                 This evergreen region is rich in biodiversity.</p>
+          </div>
+          <div class="column">
+            <img src="female.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+            <p>In Sierra Leone female mutilation is called “Bondo Society” – What usually happen is young girls,
+                 mostly in their puberty stage are taken to a secret place in an enclosed hut or house somewhere 
+                 (bush) in the village/town/city which looked like a fenced forest, locally called “Bondo Bush</p>
+          </div>
+        </div>
+         <!-- The four columns -->
+         <div class="row">
+            <div class="column">
+              <img src="minig.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+              <p>diamond exploration and mining operations in Sierra Leone are the mejor activities.
+                   Meet our people at work and in our community, and follow our progress as we demonstrate that responsible and
+                    sustainable diamond mining</p>
+            </div>
+            <div class="column">
+              <img src="wildlife-sl-13.jpeg" alt="Snow" style="width:100%" onclick="myFunction(this);">
+              <p> The wildlife of Sierra Leone is very diverse due to the variety of different habitats within the country.
+                   Sierra Leone is home to approximately 2090 known higher plant species, 147 known species of mammals, 
+                   172 known breeding bird species, 67 known reptile species,
+                    35 known amphibian species and 99 known speciesof fish</p>
+            </div>
+            <div class="column">
+              <img src="sierra-leone sea.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+              <p>Around the globe, Sierra Leone is eminent for its delightful beach shorelines. 
+                  There are a beautiful part of shorelines in Sierra Leone and the vast majority of them are neat and serene.
+                   Sea Beach shorelines are abundant as well as of a generally high caliber 
+                   and it brags a portion of the best shorelines on the planet</p>
+            </div>
+            <div class="column">
+              <img src="sierra-leone-natural-history-eagle.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+              <p>Eagles, They are found worldwide in the Tropics. 
+                  They are identifiable by their huge feet and claws which enable them to walk on floating 
+                  vegetation in the shallow lakes that are their preferred habitat.</p>
+            </div>
+          </div>
+        
+        <div class="container">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          <img id="expandedImg" style="width:100%">
+          <div id="imgtext"></div>
+        </div>
+        
+        <script>
+        function myFunction(imgs) {
+          var expandImg = document.getElementById("expandedImg");
+          var imgText = document.getElementById("imgtext");
+          expandImg.src = imgs.src;
+          imgText.innerHTML = imgs.alt;
+          expandImg.parentElement.style.display = "inline";
+        }
+        </script>
+        
+</body>
+</html>
